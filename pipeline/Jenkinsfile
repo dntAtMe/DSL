@@ -1,0 +1,6 @@
+timeout(time: 40, unit: 'MINUTES') {
+    stage('build') {
+        println('Building...')
+    }
+}
+    
