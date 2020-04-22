@@ -1,6 +1,6 @@
 def gitUrl = "https://github.com/dntAtMe/dc"
 
-job("ProjectBuild") {
+pipelineJob("ProjectBuild") {
     concurrentBuild(false)
     description "Builds dc project from master branch."
     parameters {
