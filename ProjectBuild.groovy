@@ -18,7 +18,7 @@ job("DISCORD.VLIFE.master.BUILD") {
         git {
             remote {
                 url('git@github.com:dntAtMe/dc.git')
-                credentialsId('dntAtMe2')
+                credentials('dntAtMe2')
             }
         }
     }
