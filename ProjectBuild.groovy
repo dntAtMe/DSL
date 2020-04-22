@@ -16,9 +16,13 @@ pipelineJob("DISCORD.VLIFE.master.PIPELINE") {
 job("DISCORD.VLIFE.master.BUILD") {
     scm {
         git {
+            branch('master')
             remote {
                 url('git@github.com:dntAtMe/BuildsCI.git')
                 credentials('dntAtMe2')
+            }
+            extensions {
+                wipeOutWorkspace()
             }
         }
     }
