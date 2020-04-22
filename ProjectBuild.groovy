@@ -1,8 +1,8 @@
 def gitUrl = "https://github.com/dntAtMe/dc"
 
-pipelineJob("ProjectBuild") {
+pipelineJob("DISCORD.VLIFE.master.PIPELINE") {
     concurrentBuild(false)
-    description "Builds dc project from master branch."
+    description "Builds Discord V-Life project from master branch."
     parameters {
         stringParam('GIT_COMMIT', 'HEAD', 'Commit to build')
     }
@@ -10,5 +10,19 @@ pipelineJob("ProjectBuild") {
         cps {
             script(readFileFromWorkspace('pipeline/Jenkinsfile'))
         }
+    }
+}
+
+job("DISCORD.VLIFE.master.BUILD") {
+    scm {
+        git {
+            remote {
+                url('git@github.com:dntAtMe/dc.git')
+                credentials('dntAtMe2')
+            }
+        }
+    }
+    steps {
+        shell('./build.sh')
     }
 }
