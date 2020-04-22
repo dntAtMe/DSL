@@ -17,12 +17,12 @@ job("DISCORD.VLIFE.master.BUILD") {
     scm {
         git {
             remote {
-                url('git@github.com:dntAtMe/dc.git')
+                url('git@github.com:dntAtMe/BuildsCI.git')
                 credentials('dntAtMe2')
             }
         }
     }
     steps {
-        shell('./build.sh')
+        shell('./build-npm.sh')
     }
 }
