@@ -1,0 +1,7 @@
+timeout(time: 40, unit: 'MINUTES') {
+    stage('build') {
+        println('Building...')
+        build job: "USELESSFS.master.BUILD", propagate: true, quietPeriod: 0, wait: true
+    }
+}
+    
